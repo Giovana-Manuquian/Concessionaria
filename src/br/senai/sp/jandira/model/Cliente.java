@@ -11,10 +11,10 @@ public class Cliente {
      *
      * */
 
-    String nome, email, endereco;
-    long telefone, cpf, rg;
+    public String nome, email, endereco;
+    public long telefone, cpf, rg;
 
-    double dinheiroDisponivel;
+    public double dinheiroDisponivel;
 
     List<Cliente> listCliente = new ArrayList<>();
 
@@ -48,14 +48,7 @@ public class Cliente {
         listCliente.add(objCliente);
 
     }
-    public Cliente buscarClientePorNome(String nome) {
-        for (Cliente cliente : listCliente) {
-            if (cliente.nome.equalsIgnoreCase(nome)) {
-                return cliente;
-            }
-        }
-        return null; // Cliente não encontrado
-    }
+
     public void listarCliente(){
 
         for (Cliente objCliente : listCliente){
@@ -63,4 +56,15 @@ public class Cliente {
         }
 
     }
+
+    public Cliente pesquisarComprador(String nome){
+        for (Cliente cliente : listCliente){
+            if (cliente.nome.equalsIgnoreCase(nome)){
+                return cliente;
+            }
+        }
+        return null;
+    }
 }
+
+

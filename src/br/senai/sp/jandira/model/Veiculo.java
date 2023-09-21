@@ -43,24 +43,21 @@ public class Veiculo {
             System.out.println(objVeiculo.modelo);
         }
     }
-    public boolean pesquisarVeiculoPorNome(String veiculoPesquisado) {
-        for (Veiculo objVeiculo : listVeiculos) {
-            if (objVeiculo.modelo.equalsIgnoreCase(veiculoPesquisado)) {
+    public boolean pesquisarVeiculo(String veiculoPesquisado){
+        for (Veiculo objVeiculo : listVeiculos){
+            if (objVeiculo.modelo.equalsIgnoreCase(veiculoPesquisado)){
                 return true;
             }
         }
         return false;
     }
-
-    public Veiculo pesquisarVeiculoPorModelo(String modelo) {
-        for (Veiculo veiculo : listVeiculos) {
-            if (veiculo.modelo.equalsIgnoreCase(modelo)) {
+    public Veiculo localizarVeiculoCompra(String modeloVeiculo){
+        for (Veiculo veiculo : listVeiculos){
+            if (veiculo.modelo.equalsIgnoreCase(modeloVeiculo)){
                 return veiculo;
             }
         }
-        return null; // Veículo não encontrado
+        return null;
     }
-
-
 
 }
