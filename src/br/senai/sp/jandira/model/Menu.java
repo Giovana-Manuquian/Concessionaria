@@ -87,15 +87,21 @@ public class Menu {
                     }
 
                     if (validaVenda || validaFinanciamento){
-                        System.out.println("///// ----- Parabens ----- //////");
-                        objComprador.dinheiroDisponivel -= objVeiculoVenda.preco;
-                        System.out.println("O saldo do cliente é: " + objComprador.dinheiroDisponivel);
+                        System.out.println("///// ----- Parabens Pelo seu novo Veiculo ----- //////");
+
+                        if (validaVenda) {
+                            objComprador.dinheiroDisponivel -= objVeiculoVenda.preco;
+                            System.out.println("O saldo do cliente é: " + objComprador.dinheiroDisponivel);
+                        }
+
+                        if (validaFinanciamento){
+                            objComprador.dinheiroDisponivel -= objVenda.valorEntrada;
+                            System.out.println("O saldo do cliente é: " + objComprador.dinheiroDisponivel);
+                        }
 
                         objVendedor.receberComissao(objVeiculoVenda);
                         System.out.println("O Funcionario recebeu: " + objVendedor.comissao);
-
                     }
-
                     break;
 
                 case 5:
@@ -124,14 +130,11 @@ public class Menu {
                     } else {
                         System.out.println("Veiculo Indisponivel !!");
                     }
-
-
                     break;
 
                 case 9:
                     continuar = false;
                     break;
-
             }
 
             if (escolhaUsuario < 1 || escolhaUsuario > 9){
@@ -139,9 +142,6 @@ public class Menu {
             }
 
         }
-
-
-
     }
 
 }

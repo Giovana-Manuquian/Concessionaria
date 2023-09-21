@@ -6,6 +6,8 @@ public class Venda {
 
     Scanner teclado = new Scanner(System.in);
 
+    double valorEntrada;
+
     public boolean realizarVenda(Veiculo objVeiculo, Cliente objCliente){
 
         if (objCliente.dinheiroDisponivel >= objVeiculo.preco){
@@ -46,7 +48,7 @@ public class Venda {
         System.out.println("/// ---- Financiamento  ---- ///");
 
         System.out.println("Informe o valor da entrada: ");
-        double valorEntrada = teclado.nextDouble();
+        valorEntrada = teclado.nextDouble();
 
         System.out.println("Informe quantas parcelas: ");
         int parcelas = teclado.nextInt();
@@ -62,7 +64,5 @@ public class Venda {
             return  true;
         }
         return false;
-
-        if ()
     }
 }
